@@ -14,6 +14,9 @@
                         display: none;
                     }
                 }
+                .item-banner {
+                    display: none;
+                }
             }
             .list-service {
                 .title-pet {
@@ -296,6 +299,7 @@
             .menu-banner {
                 margin-top: 50px;
                 .banner {
+                    width: 1110px;
                     margin: auto;
                     picture {
                         img {
@@ -305,6 +309,11 @@
                     .owl-dots {
                         display: none;
                     }
+                }
+                .item-banner {
+                    display: block;
+                    width: 1110px;
+                    margin: 35px auto 84px auto;
                 }
             }
             .list-service {

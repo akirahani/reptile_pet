@@ -16,6 +16,5 @@
     <link rel="stylesheet" href="{{ asset('assets3/css/style.css') }}">
 
     <script src="{{ asset('assets3/js/jquery-2.1.1.min.js') }}"></script>
-    <script src="{{ asset('assets3/js/header.js') }}"></script>
 </head>
 

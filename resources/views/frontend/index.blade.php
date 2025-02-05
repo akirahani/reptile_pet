@@ -37,6 +37,14 @@
 		lazyLoad: true,
         responsiveClass:true,
 	});
+    $(".item-banner").owlCarousel({
+		items: 4,
+		nav: false,
+		dots: false,
+        margin: 30,
+		lazyLoad: true,
+        responsiveClass:true,
+	});
 
 	$('.screenshot_slider').owlCarousel({
 	    loop: true,

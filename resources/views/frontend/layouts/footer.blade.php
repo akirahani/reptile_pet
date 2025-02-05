@@ -1,34 +1,30 @@
 <div class="all-wp-footer">
     <div class="box-footer">
         <div class="column-first">
-            <h1>Bò sát Hải Phòng</h1>
-            <ul>
-                <li>
-                    <p>Đ/c: Đường 17, Khu đô thị Him Lam, phường Hùng Vương, Quận Hồng Bàng, TP. Hải Phòng</p>
-                </li>
-                <li>
-                    <p>Tel:</p>
-                </li>
-                <li>
-                   <p>Email:</p>  
-                </li>
-                <li>
-                    <p>Website: bosathaiphong.com</p>
-                </li>
-            </ul>
+            <img src="{{asset('assets3/image/logo.svg')}}" alt="Logo bò sát" />
+            <p class="sub-title">Hãy tạo dựng một không gian sống lý tưởng cho pet của bạn</p>
         </div>
         <div class="column-second">
-            <h1>Chính sách</h1>
-            <ul>
-                <li><p>Tư vấn</p></li>
-                <li><p></p></li>
-            </ul>
+            <div class="contact-ft">
+                <p>Cs 1: Khu chung cư Himlam, Hùng Vương, Hồng Bàng, Hải Phòng</p>
+                <p>SĐT: 039.554.9090</p>
+                <p>Cs 2: Tân Triều, Triều Khúc, Thanh Trì, Hà Nội</p>
+                <p>SĐT: 086.277.8388</p>
+            </div>
         </div>
         <div class="column-third">
-            <h1>Fanpage</h1>
+            <img src="{{asset('assets3/image/congthuong.svg')}}" alt="Bộ công thương" />
+        </div>
+        <div class="column-last">
+            <p>Theo dõi chúng tôi</p>
+            <ul>
+                <li><img src="{{asset('assets3/image/facebook.svg')}}" alt="facebook" /></li>
+                <li><img src="{{asset('assets3/image/ytb.svg')}}" alt="youtube" /></li>
+                <li><img src="{{asset('assets3/image/zalo.svg')}}" alt="zalo" /></li>
+            </ul>
         </div>
     </div>
 </div>
-<div class="copy-right">
+{{-- <div class="copy-right">
     <p> Copyright <i class="fa fa-copyright" aria-hidden="true"></i> Bosathaiphong</p>
-</div>
+</div> --}}

@@ -12,7 +12,7 @@
         .bar-header {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-around;
             margin: 8px 5px 0 5px;
             .head-right {
                 .img-first,
@@ -21,12 +21,12 @@
                     margin-right: 12px;
                 }
             }
-            .head-search {
+            .head-right {
                 display: none;
             }
             .head-left,
             .head-center,
-            .head-right {
+            .head-search {
                 position: relative;
                 cursor: pointer;
                 input {
@@ -34,17 +34,18 @@
                     padding: 5px;
                     border: none;
                     outline: none;
-                    background-color: #EBEBEB;
+                    font-size: 14px;
                     border-radius: 24px;
-                    font-family: 'Roboto';
                     font-style: normal;
                     line-height: 23px;
                     color: #000000;
+                    background-color: #F5F5F5;
+                    border-radius: 8px;
                 }
                 .btn-search {
                     position: absolute;
-                    top: 5px;
-                    right: 10px;
+                    top: 0;
+                    right: 0;
                 }
             }
         }
@@ -74,12 +75,9 @@
                 }
                 a {
                     text-decoration: none;
-                    font-family: 'SVN-Product Sans';
-                    font-style: normal;
-                    font-weight: 400;
-                    padding-left: 10px;
-                    font-size: 18px;
-                    line-height: 25px;
+                    font-family: 'Montserrat';
+                    font-size: 14px;
+                    font-weight: 500;
                     color: #000000;
                 }
             }
@@ -112,48 +110,65 @@
 
 @media all and (min-width: 1201px) {
     header {
-        background: #9e5f2c;
+        background: #fff;
         width: 100%;
         .bar-header {
+            width: 1155px;
+            margin: 0 auto;
             .head-left {
                 width: 20%;
                 display: none;
             }
-            .head-search {
-                width: 60%;
+            .head-right {
+                width: 30%;
                 display: block;
-                .nav-desk {
-                    ul {
-                        list-style: none;
+                ul {
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .line-crack {
+                        background-color: #D9D9D9;
+                        width: 1px;
+                        height: 30px;
+                    }
+                    li {
                         display: flex;
                         justify-content: space-between;
-                        li {
-                            a {
-                                color: #fff;
-                                text-decoration: none;
-                                font-family: 'SVN-Product Sans';
-                                font-style: normal;
-                                font-weight: 700;
-                                font-size: 20px;
-                                line-height: 24px;
-                                text-align: center;
+                        align-items: center;
+                        div {
+                            img {
+                                margin-right: 14px;
+                            }
+                            p {
+                                font-family: 'Montserrat';
+                                font-size: 14px;
+                                font-weight: 500;
+                                line-height: 20px;
+                                margin: 0;
+                                &.trademark {
+                                    color: #0FCBFF;
+                                }
                             }
                         }
                     }
                 }
             }
-            .head-right {
-                width: 20%;
+            .head-search {
+                width: 50%;
                 display: block;
                 input {
+                    width: 100%;
+                    position: relative;
                     font-weight: 400;
-                    font-size: 20px;
                     line-height: 23px;
                 }
                 .btn-search {
                     position: absolute;
                     top: 7px;
-                    right: 50px;
+                    right: 0;
                 }
             }
         }
