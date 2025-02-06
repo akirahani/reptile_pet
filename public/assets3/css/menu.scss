@@ -49,6 +49,9 @@
                 }
             }
         }
+        .nav-desk {
+            display: none;
+        }
     }
     .nav-mobile {
         margin-left: -100%;
@@ -169,6 +172,31 @@
                     position: absolute;
                     top: 7px;
                     right: 0;
+                }
+            }
+        }
+        .nav-desk {
+            display: block;
+            ul {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                li {
+                    margin-right: 36px;
+                    a {
+                        font-family: 'Montserrat';
+                        font-size: 16px;
+                        font-weight: 600;
+                        line-height: 19.5px;
+                        color: #607089;
+                        text-decoration: none;
+                    }
+                     :hover {
+                        color: #0FCBFF;
+                    }
+                }
+                li:last-child {
+                    margin-right: 0;
                 }
             }
         }

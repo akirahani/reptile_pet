@@ -25,6 +25,3 @@
         </div>
     </div>
 </div>
-{{-- <div class="copy-right">
-    <p> Copyright <i class="fa fa-copyright" aria-hidden="true"></i> Bosathaiphong</p>
-</div> --}}
