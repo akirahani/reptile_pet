@@ -39,7 +39,7 @@
         <nav class="nav-desk">
             <ul>                <li><a href="./">Trang chủ</a></li>
                 <li><a href="{{url('./pet')}}">Sản phẩm</a></li>
-                <li><a href="./loai-san-pham">kiến thức</a></li>
+                <li><a href="./kien-thuc">Kiến thức</a></li>
                 <li><a href="./lien-he">Liên hệ</a></li>     
             </ul>
         </nav>

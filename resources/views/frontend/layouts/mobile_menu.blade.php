@@ -12,14 +12,16 @@
 <!-- menu -->
 <script>
 	$('.head-left').click(function(){
-		if($(document).width() >= 0 && $(document).width() < 520)
+	
+		if(window.innerWidth >= 0 && window.innerWidth < 520)
 		{
 			$('.nav-mobile').css('margin-left','0');
 		}
 
-		if($(document).width() >= 520 && $(document).width() < 3200)
+		if(window.innerWidth >= 520 && window.innerWidth < 1201)
 	    {
-	        $('.nav-mobile').css("margin-left", '100%');
+			let a = ((window.innerWidth - 480)/2)-5;
+	        $('.nav-mobile').css("margin-left", 'calc(100% + '+a+'px )');
 	    }
 	});
 	$('.close-nav').click(function(){
