@@ -1,104 +1,86 @@
 
-<link rel="stylesheet" type="text/css" href="public/css/detail.css?v=23042023">
-<main>
-	<div class="bread-title">
-		<p><a href="">Trang chủ</a> > &nbsp; </p>
-		<p>Sản phẩm > &nbsp; </p>
-		<p><?=$detail->ten ?></p>
-	</div>
-	<div class="line-bread"></div>
-	<div class="tong-quan-phong">
-		<div class="slides-all">
-			<div id="sync1" class="thumbs-slide owl-carousel owl-theme">
-				<?php  
-
-					if($detail->album != NULL)
-					{
-						foreach (explode(",", $detail->album) as $key => $val) 
+@extends('frontend.index')
+@section('content')
+<section class="all-product">
+    <main>
+		<div class="bread-title">
+			<p><a href="">Trang chủ</a>/</p>
+			<p>Sản phẩm/</p>
+			<p>Kẹp gỗ ngắn gấp thức ăn </p>
+		</div>
+		<div class="line-bread"></div>
+		<div class="tong-quan-phong">
+			<div class="slides-all">
+				<div id="sync1" class="thumbs-slide owl-carousel owl-theme">
+					<?php  
+	
+						if($detail->album != NULL)
 						{
-							echo'<div class="image-detail item">
-								<picture>
-									<source class="mobile" media="(max-width:1199px)" width="367px" height="372px" srcset="uploads/sanpham/'.$val.'">
-					        		<source class="desktop" media="(min-width:1200px)" width="616px" height="560px" srcset="uploads/sanpham/'.$val.'">
-					        		<img src="uploads/sanpham/'.$val.'" alt="Ảnh chi tiết sản phẩm">
-					        	</picture>
-							</div>';
+							foreach (explode(",", $detail->album) as $key => $val) 
+							{
+								echo'<div class="image-detail item">
+									<picture>
+										<source class="mobile" media="(max-width:1199px)" width="367px" height="372px" srcset="uploads/sanpham/'.$val.'">
+										<source class="desktop" media="(min-width:1200px)" width="616px" height="560px" srcset="uploads/sanpham/'.$val.'">
+										<img src="uploads/sanpham/'.$val.'" alt="Ảnh chi tiết sản phẩm">
+									</picture>
+								</div>';
+							}
 						}
-					}
-					else{
-						for($i = 1; $i<=2 ; $i++){
-							echo'<div class="image-detail item">
-								<picture>
-									<source class="mobile" media="(max-width:1199px)" srcset="uploads/sanpham/detail'.$i.'.png">
-					        		<source class="desktop" media="(min-width:1200px)" srcset="uploads/sanpham/detail/room'.$i.'_desk.png">
-					        		<img src="uploads/sanpham/detail/room'.$i.'_desk.png" alt="Ảnh chi tiết sản phẩm">
-					        	</picture>
-							</div>';
-					    }
-
-					}				
-				?>
-			</div>
-			<div id="sync2" class="thumbs-slide2 owl-carousel owl-theme">
-				<?php  
-					if($detail->album != NULL){
-						foreach (explode(",", $detail->album) as $key => $val) {
-							echo'<div class="image-detail item"><img src="uploads/sanpham/'.$val.'" alt="Ảnh chi tiết sản phẩm"></div>';
+						else{
+							for($i = 1; $i<=2 ; $i++){
+								echo'<div class="image-detail item">
+									<picture>
+										<source class="mobile" media="(max-width:1199px)" srcset="uploads/sanpham/detail'.$i.'.png">
+										<source class="desktop" media="(min-width:1200px)" srcset="uploads/sanpham/detail/room'.$i.'_desk.png">
+										<img src="uploads/sanpham/detail/room'.$i.'_desk.png" alt="Ảnh chi tiết sản phẩm">
+									</picture>
+								</div>';
+							}
+	
+						}				
+					?>
+				</div>
+				<div id="sync2" class="thumbs-slide2 owl-carousel owl-theme">
+					<?php  
+						if($detail->album != NULL){
+							foreach (explode(",", $detail->album) as $key => $val) {
+								echo'<div class="image-detail item"><img src="uploads/sanpham/'.$val.'" alt="Ảnh chi tiết sản phẩm"></div>';
+							}
 						}
-					}
-					else{
-						for($i = 1; $i<=2 ; $i++){
-							echo'<div class="image-detail item"><img src="uploads/sanpham/detail'.$i.'.png" alt="Ảnh chi tiết sản phẩm"></div>';
+						else{
+							for($i = 1; $i<=2 ; $i++){
+								echo'<div class="image-detail item"><img src="uploads/sanpham/detail'.$i.'.png" alt="Ảnh chi tiết sản phẩm"></div>';
+							}
 						}
-					}
-
-				?>
+	
+					?>
+				</div>
+			</div>
+	
+			<div class="thong-tin-phong">
+				<h1><?=$detail->ten ?></h1>
+				<div class="detail-price">
+					<span><?php
+						$gia_phong = $detail->giacuoi;
+						echo number_format($gia_phong,0,'.','.');
+						?>đ 
+					</span>
+				</div> 
+				<div class="button-flex">
+					<button class="them-gio" id="<?=$detail->slug?>" sp="<?=$detail->id?>" loai="them-gio">Thêm vào giỏ hàng</button>
+					<button class="mua-ngay" id="<?=$detail->slug?>" sp="<?=$detail->id?>" loai="mua-ngay" >Mua ngay</button>
+				</div>
+				<article>
+						<?php echo $detail->noidung; ?>
+				</article>
 			</div>
 		</div>
+	
+	</main>
+</section>
+@endsection
 
-		<div class="thong-tin-phong">
-			<h1><?=$detail->ten ?></h1>
-			<div class="detail-price">
-				<span><?php
-					$gia_phong = $detail->giacuoi;
-					echo number_format($gia_phong,0,'.','.');
-					?>đ 
-				</span>
-			</div> 
-			<div class="button-flex">
-				<button class="them-gio" id="<?=$detail->slug?>" sp="<?=$detail->id?>" loai="them-gio">Thêm vào giỏ hàng</button>
-				<button class="mua-ngay" id="<?=$detail->slug?>" sp="<?=$detail->id?>" loai="mua-ngay" >Mua ngay</button>
-			</div>
-			<article>
-					<?php echo $detail->noidung; ?>
-			</article>
-		</div>
-	</div>
-
-	<div class="product-other">
-		<h1>Sản phẩm tương tự</h1>
-		<div class="line-break">
-			<div class="line1"></div>
-			<div class="circle"></div>
-			<div class="line2"></div>
-		</div>
-		<div class="product-all">
-			<?php 
-				foreach ($other as $key => $val) {
-					echo '<div class="product-item">';		
-						echo '<a href="san-pham/'.$val->slug.'">';
-							echo '<img src="uploads/sanpham/'.$val->anh.'" alt="'.$val->ten.'" />';
-							echo '<h2>'.$val->ten.'</h2>';
-							echo '<p class="price">'.number_format($val->giacuoi,0,".",".").'đ</p>';
-							echo '<p> Trọng lượng: '.$val->trongluong.''.$arr_donvi[$val->donvi]->tentat.'</p>';
-						echo '</a>';
-					echo '</div>';
-				}
-				
-			 ?>
-		</div>
-	</div>
-</main>
 
 <script>
 	$('.them-gio').click(function(){

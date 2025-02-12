@@ -14,7 +14,10 @@
     <link rel="stylesheet" href="{{ asset('assets3/css/menu.css') }}">
     <link rel="stylesheet" href="{{ asset('assets3/css/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('assets3/css/style.css') }}">
-
+    {{-- page --}}
+    <link rel="stylesheet" href="{{ asset('assets3/css/page/blog.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets3/css/page/product.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets3/css/page/contact.css') }}">
     <script src="{{ asset('assets3/js/jquery-2.1.1.min.js') }}"></script>
 </head>
 

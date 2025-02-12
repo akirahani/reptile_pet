@@ -1,0 +1,83 @@
+@import '../font';
+@media all and(min-width: 0) {
+    .all-blog {
+        .title-blog {
+            display: flex;
+            align-items: center;
+            p {
+                color: #607089;
+                font-family: 'Montserrat';
+                font-size: 16px;
+                font-weight: 400;
+            }
+            b {
+                color: #607089;
+                font-family: 'Montserrat';
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+        .list-blog {
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: repeat(auto-fill, calc(50% - 10px));
+            .box-blog {
+                margin-bottom: 22px;
+                border-radius: 12px;
+                opacity: 100%;
+                background-color: #fff;
+                img {
+                    width: 100%;
+                }
+                h1 {
+                    text-transform: uppercase;
+                    color: #607089;
+                    font-family: 'Montserrat';
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+                span {
+                    color: #607089;
+                    font-family: 'Montserrat';
+                    font-size: 10px;
+                    font-weight: 400;
+                }
+                p {
+                    color: #607089;
+                    font-family: 'Montserrat';
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+@media all and(min-width: 521px) {
+    .all-blog {
+        .title-blog {
+            margin-top: 70px;
+        }
+    }
+}
+
+@media all and(min-width: 1201px) {
+    .all-blog {
+        .title-blog {
+            display: flex;
+            align-items: center;
+        }
+        .list-blog {
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: repeat(auto-fill, calc(33.33% - 30px));
+            .box-blog {
+                padding: 8px 6px;
+                margin-bottom: 22px;
+                border-radius: 12px;
+                opacity: 100%;
+                background-color: #fff;
+            }
+        }
+    }
+}

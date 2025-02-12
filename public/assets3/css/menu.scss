@@ -1,4 +1,5 @@
 @import 'owl';
+@import "font";
 @media all and (min-width: 0) {
     header {
         background-color: #ffffff;
@@ -13,7 +14,6 @@
             display: flex;
             align-items: center;
             justify-content: space-around;
-            margin: 8px 5px 0 5px;
             .head-right {
                 .img-first,
                 .logout,
@@ -44,7 +44,7 @@
                 }
                 .btn-search {
                     position: absolute;
-                    top: 0;
+                    top: 5px;
                     right: 0;
                 }
             }
@@ -83,6 +83,9 @@
                     font-size: 14px;
                     font-weight: 500;
                     color: #000000;
+                }
+                 :hover {
+                    color: #0FCBFF;
                 }
             }
         }

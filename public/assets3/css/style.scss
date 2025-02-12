@@ -1,6 +1,9 @@
+@import "font";
 @media all and (min-width: 0) {
-    .all-wrapper-content {
+    #all-wrapper-ui {
         background-color: #f8f8f8;
+    }
+    .all-wrapper-content {
         margin-top: 70px;
         .main-content {
             .menu-banner {
@@ -183,9 +186,13 @@
 }
 
 @media all and (min-width: 521px) {
-    .all-wrapper-content {
+    #all-wrapper-ui {
         width: 480px;
         margin: auto;
+    }
+    .all-wrapper-content {
+        // width: 480px;
+        // margin: auto;
         .main-content {
             .blog {
                 .all-news {
@@ -213,9 +220,12 @@
 }
 
 @media all and (min-width: 1201px) {
+    #all-wrapper-ui {
+        width: 100%;
+    }
     .all-wrapper-content {
         width: 1110px;
-        margin: auto;
+        margin: 150px auto 0 auto;
         .main-content {
             .menu-banner {
                 margin-top: 170px;
