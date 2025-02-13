@@ -1,6 +1,7 @@
 @import "font";
 @media all and (min-width: 0) {
     .all-wp-footer {
+        background-color: #fff;
         .box-footer {
             padding: 10px;
             color: #000;
@@ -51,7 +52,8 @@
 
 @media all and (min-width: 1201px) {
     .all-wp-footer {
-        width: calc(100% - 100px);
+        margin-top: 50px;
+        width: 100%;
         .box-footer {
             display: flex;
             padding: 30px;
@@ -65,7 +67,7 @@
                     margin: auto;
                 }
                 p {
-                    font-family: Montserrat;
+                    font-family: 'Montserrat';
                     font-size: 14px;
                     font-weight: 500;
                     line-height: 20px;

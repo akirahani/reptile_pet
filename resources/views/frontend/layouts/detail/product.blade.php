@@ -62,17 +62,17 @@
 				<h1><?=$detail->ten ?></h1>
 				<div class="detail-price">
 					<span><?php
-						$gia_phong = $detail->giacuoi;
-						echo number_format($gia_phong,0,'.','.');
+						
+						echo number_format('1000000',0,'.','.');
 						?>đ 
 					</span>
 				</div> 
 				<div class="button-flex">
-					<button class="them-gio" id="<?=$detail->slug?>" sp="<?=$detail->id?>" loai="them-gio">Thêm vào giỏ hàng</button>
-					<button class="mua-ngay" id="<?=$detail->slug?>" sp="<?=$detail->id?>" loai="mua-ngay" >Mua ngay</button>
+					<button class="them-gio" id="" sp="" loai="them-gio">Thêm vào giỏ hàng</button>
+					<button class="mua-ngay" id="" sp="" loai="mua-ngay" >Mua ngay</button>
 				</div>
 				<article>
-						<?php echo $detail->noidung; ?>
+						<?php echo 'aaaas'; ?>
 				</article>
 			</div>
 		</div>

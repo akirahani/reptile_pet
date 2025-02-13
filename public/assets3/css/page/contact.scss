@@ -19,6 +19,7 @@
         }
         .box-contact {
             padding: 18px 7px;
+            border-radius: 12px;
             background-color: #fff;
             .infomation {
                 h1 {
@@ -76,6 +77,7 @@
                         display: flex;
                         justify-content: space-between;
                         .form-input {
+                            width: calc(50% - 10px);
                             p {
                                 margin: 15px 0 0 0;
                                 color: #232323;
@@ -85,7 +87,6 @@
                             }
                             input[type="text"] {
                                 margin-top: 10px;
-                                width: 100%;
                                 border-radius: 4px;
                                 border: 2px solid #ebeced;
                                 height: 30px;
@@ -150,9 +151,14 @@
 
 @media all and(min-width: 1201px) {
     .all-contact {
+        width: 1110px;
+        margin: 0 auto;
         .box-contact {
+            padding-left: 21px;
             display: flex;
+            justify-content: space-around;
             .form-contact {
+                padding-right: 8px;
                 h1 {
                     text-transform: uppercase;
                     color: #232323;
@@ -171,7 +177,6 @@
                         display: flex;
                         justify-content: space-between;
                         .form-input {
-                            width: 100%;
                             p {
                                 margin: 15px 0 0 0;
                                 color: #232323;

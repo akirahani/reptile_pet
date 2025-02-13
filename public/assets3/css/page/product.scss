@@ -17,6 +17,8 @@
             }
         }
         .box-product {
+            padding: 0 7px;
+            border-radius: 12px;
             background-color: #fff;
             .menu-product {
                 h1 {
@@ -74,8 +76,10 @@
 
 @media all and(min-width: 1201px) {
     .all-product {
+        width: 1110px;
+        margin: 0 auto;
         .box-product {
-            padding: 18px 7px;
+            padding: 0 13px 0 17px;
             display: flex;
             .menu-product {
                 width: 20%;

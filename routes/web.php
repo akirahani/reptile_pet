@@ -32,9 +32,8 @@ Route::get('/lien-he', function () {
 
 // all detal page
 
-Route::get('/san-pham/detail', function () {
-    return view('frontend.layouts.detail.product');
-});
+Route::get('/san-pham/{link}','Frontend\Detail\ProductController@index')->name('product.detail');
+    
 
 Route::get('/kien-thuc/detail', function () {
     return view('frontend.layouts.detail.blog');

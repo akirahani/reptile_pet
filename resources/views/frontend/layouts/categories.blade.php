@@ -1,35 +1,43 @@
+@php
+    $arr = [
+        1 => 'Tấm sưởi cho bò sát',
+        2=>'Cùi bắp lót chuồng',
+        3 => 'Kẹp đèn',
+        4=>'Chén nhựa đôi',
+        5 => 'Hộp nhựa chuyên dụng',
+    ];
+ 
+
+@endphp
 <section class="highlight-day">
-    <h1 class="title-hd">Hôm nay có gì ?</h1>
-    <ul class="product-hd">
-        <li>
-            <img src="{{asset('assets3/image/product/pd1.png')}}" alt="Sản phẩm">
-            <p>Tấm sưởi cho bò sát</p>
-        </li>
-        <li>
-            <img src="{{asset('assets3/image/product/pd2.png')}}" alt="Sản phẩm">
-            <p>Cùi bắp lót chuồng</p>
-        </li>
-        <li>
-            <img src="{{asset('assets3/image/product/pd3.png')}}" alt="Sản phẩm">
-            <p>Kẹp đèn</p>
-        </li>
-        <li>
-            <img src="{{asset('assets3/image/product/pd4.png')}}" alt="Sản phẩm">
-            <p>Chén nhựa đôi</p>
-        </li>
-        <li>
-            <img src="{{asset('assets3/image/product/pd5.png')}}" alt="Sản phẩm">
-            <p>Hộp nhựa chuyên dụng</p>
-        </li>
-    </ul>
-    <button><p>Xem tất cả</p> <img src="{{asset('assets3/image/next.svg')}}" alt="next"></button>
+    <div class="hd-screen">
+        <h1 class="title-hd">Hôm nay có gì ?</h1>
+        <ul class="product-hd">
+            <?php foreach($arr as $key => $item){
+                $convert_unicodetv = convert_vn2latin($item);
+                $lowcase = strtolower($convert_unicodetv);
+                $link = str_replace(" ","-",$lowcase);
+
+            ?>
+                <li>
+                    <a href="{{route('product.detail',['link'=>$link])}}">
+                        <img src="{{asset('assets3/image/product/pd'.$key.'.png')}}" alt="Sản phẩm">
+                        <p><?=$item ?></p>
+                    </a>
+                </li>
+            <?php } ?>
+        </ul>
+        <button><p>Xem tất cả</p> <img src="{{asset('assets3/image/next.svg')}}" alt="next"></button>
+    </div>
 </section>
 <section class="accessory">
-    <h1 class="title-ac">Phụ kiện bò sát</h1>
-    <ul class ="list-accessory">
+    <div class="ac-screen">
+        <h1 class="title-ac">Phụ kiện bò sát</h1>
+        <ul class ="list-accessory">
 
-    </ul>
-    <button><p>Xem tất cả</p>  <img src="{{asset('assets3/image/next.svg')}}" alt="next"></button>
+        </ul>
+        <button><p>Xem tất cả</p>  <img src="{{asset('assets3/image/next.svg')}}" alt="next"></button>
+    </div>
     <div class="image-plus">
         <ul>
             <?php
@@ -45,7 +53,7 @@
 <script>
     if(window.innerWidth <= 1200){
         for(let i = 1; i < 11; i++){
-            $('.list-accessory').append('<li><img src="assets3/image/product/pd6.png" alt="Sản phẩm (phụ kiện)"><p>Đèn sưởi UAV</p></li>');
+            $('.list-accessory').append('<li><a href=""><img src="assets3/image/product/pd6.png" alt="Sản phẩm (phụ kiện)"><p>Đèn sưởi UAV</p></a></li>');
         }
     }else{
         for(let i = 1; i < 11; i++){
@@ -58,7 +66,7 @@
                     $('.list-accessory').append('');
 
                 }else{
-                    $('.list-accessory').append('<li><img src="assets3/image/product/pd6.png" alt="Sản phẩm (phụ kiện)"><p>Đèn sưởi UAV</p></li>');
+                    $('.list-accessory').append('<li><a href=""><img src="assets3/image/product/pd6.png" alt="Sản phẩm (phụ kiện)"><p>Đèn sưởi UAV</p></a></li>');
                 }
             }
         }

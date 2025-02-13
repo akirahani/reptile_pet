@@ -22,9 +22,18 @@
                     display: none;
                 }
             }
+            .highlight-day {
+                background-color: #fff;
+                padding-bottom: 20px;
+            }
             .highlight-day,
             .accessory {
+                .ac-screen {
+                    background-color: #fff;
+                    padding-bottom: 20px;
+                }
                 h1 {
+                    padding: 10px 0 0 10px;
                     text-transform: uppercase;
                     color: #607089;
                     font-family: 'Montserrat';
@@ -85,7 +94,9 @@
                 }
             }
             .blog {
+                background-color: #fff;
                 h1 {
+                    padding: 10px 0 0 10px;
                     text-transform: uppercase;
                     color: #607089;
                     font-family: 'Montserrat';
@@ -224,12 +235,13 @@
         width: 100%;
     }
     .all-wrapper-content {
-        width: 1110px;
-        margin: 150px auto 0 auto;
         .main-content {
+            margin: 120px auto 0 auto;
             .menu-banner {
-                margin-top: 170px;
+                width: 1110px;
+                margin: auto;
                 .banner {
+                    padding-top: 38px;
                     picture {
                         img {
                             width: 100%;
@@ -247,8 +259,16 @@
             }
             .highlight-day,
             .accessory {
+                .hd-screen,
+                .ac-screen {
+                    width: 1110px;
+                    margin: auto;
+                }
+                .ac-screen {
+                    border-radius: 10px;
+                }
                 h1 {
-                    padding-left: 19px;
+                    padding: 10px 0 0 19px;
                     &.title-hd {
                         margin: 104px 0 15px 0;
                     }
@@ -275,8 +295,9 @@
                     width: 730px;
                 }
                 .image-plus {
+                    width: 1110px;
                     display: block;
-                    margin: 35px 0;
+                    margin: 35px auto;
                     ul {
                         margin: 0;
                         display: flex;
@@ -295,9 +316,11 @@
                 }
             }
             .blog {
-                margin-bottom: 35px;
+                width: 1110px;
+                border-radius: 10px;
+                margin: 0 auto 35px auto;
                 h1 {
-                    padding-left: 19px;
+                    padding: 10px 0 0 19px;
                     font-size: 20px;
                 }
                 .all-news {
