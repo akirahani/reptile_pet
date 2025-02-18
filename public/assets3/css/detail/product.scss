@@ -1,0 +1,128 @@
+@import '../font';
+@media all and(min-width: 0) {
+    .all-product-detail {
+        main {
+            margin: 0 10px;
+            .bread-title {
+                display: flex;
+                align-items: center;
+                p {
+                    color: #607089;
+                    font-family: 'Montserrat';
+                    font-size: 16px;
+                    font-weight: 400;
+                    a {
+                        color: #607089;
+                        text-decoration: none;
+                    }
+                    &.product-name {
+                        font-weight: 600;
+                    }
+                }
+            }
+            .content-detail {
+                .slides-all {
+                    #sync2 {
+                        margin-top: 18px;
+                    }
+                }
+                .product-info {
+                    h1 {
+                        color: #607089;
+                        font-family: 'Montserrat';
+                        font-size: 24px;
+                        font-weight: 600;
+                        margin-top: 10px;
+                    }
+                    .detail-price {
+                        span {
+                            color: #607089;
+                            font-family: 'Montserrat';
+                            font-size: 20px;
+                            font-weight: 600;
+                            margin-top: 0;
+                        }
+                    }
+                    p {
+                        color: #000;
+                        font-family: 'Montserrat';
+                        font-size: 16px;
+                        font-weight: 400;
+                        margin-top: 10px;
+                    }
+                    article {
+                        margin-top: 10px;
+                        color: #000;
+                        font-family: 'Montserrat';
+                        font-size: 16px;
+                        font-weight: 400;
+                    }
+                    .button-flex {
+                        margin: 10px auto;
+                        display: flex;
+                        justify-content: space-between;
+                        button {
+                            cursor: pointer;
+                            padding: 0;
+                            width: 258px;
+                            height: 40px;
+                            text-align: center;
+                            color: #607089;
+                            font-family: 'Montserrat';
+                            font-size: 16px;
+                            font-weight: 600;
+                            border: none;
+                            border-radius: 4px;
+                            border: solid 2px #D3DCE7;
+                            background-color: #fff;
+                            margin-left: 10px;
+                        }
+                        button:first-child {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and(min-width: 521px) {
+    .all-product-detail {}
+}
+
+@media all and(min-width: 1201px) {
+    .all-product-detail {
+        width: 1111px;
+        margin: 0 auto;
+        main {
+            .content-detail {
+                margin-top: 13px;
+                background-color: #fff;
+                border-radius: 12px;
+                display: flex;
+                justify-content: space-around;
+                .slides-all {
+                    margin-top: 44px;
+                    margin-bottom: 23px;
+                    width: 35%;
+                    #sync2 {
+                        margin-top: 18px;
+                    }
+                }
+                .product-info {
+                    margin-top: 39px;
+                    margin-bottom: 23px;
+                    width: 55%;
+                    .button-flex {
+                        width: 537px;
+                        margin: 10px 0;
+                        button {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
