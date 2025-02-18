@@ -1,7 +1,7 @@
 <nav class="nav-mobile">
 	<ul>
 		<img src="{{asset('assets3/image/logo.svg')}}" alt="Logo bò sát" />
-        <li><a href="./">Trang chủ</a></li>
+        <li><a href="{{url('/')}}">Trang chủ</a></li>
         <li><a href="{{url('./san-pham')}}">Sản phẩm</a></li>
         <li><a href="{{url('kien-thuc')}}">Kiến thức</a></li>
         <li><a href="{{url('lien-he')}}">Liên hệ</a></li>     

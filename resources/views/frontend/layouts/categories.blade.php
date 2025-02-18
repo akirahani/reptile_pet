@@ -1,33 +1,23 @@
-@php
-    $arr = [
-        1 => 'Tấm sưởi cho bò sát',
-        2=>'Cùi bắp lót chuồng',
-        3 => 'Kẹp đèn',
-        4=>'Chén nhựa đôi',
-        5 => 'Hộp nhựa chuyên dụng',
-    ];
- 
 
-@endphp
 <section class="highlight-day">
     <div class="hd-screen">
         <h1 class="title-hd">Hôm nay có gì ?</h1>
         <ul class="product-hd">
-            <?php foreach($arr as $key => $item){
-                $convert_unicodetv = convert_vn2latin($item);
+            <?php foreach($products as $key => $item){
+                $convert_unicodetv = convert_vn2latin($item->name);
                 $lowcase = strtolower($convert_unicodetv);
                 $link = str_replace(" ","-",$lowcase);
-
+                $key++;
             ?>
                 <li>
                     <a href="{{route('product.detail',['link'=>$link])}}">
                         <img src="{{asset('assets3/image/product/pd'.$key.'.png')}}" alt="Sản phẩm">
-                        <p><?=$item ?></p>
+                        <p><?=$item->name ?></p>
                     </a>
                 </li>
             <?php } ?>
         </ul>
-        <button><p>Xem tất cả</p> <img src="{{asset('assets3/image/next.svg')}}" alt="next"></button>
+        <button class="click-all-product"><p>Xem tất cả</p> <img src="{{asset('assets3/image/next.svg')}}" alt="next"></button>
     </div>
 </section>
 <section class="accessory">
@@ -36,7 +26,7 @@
         <ul class ="list-accessory">
 
         </ul>
-        <button><p>Xem tất cả</p>  <img src="{{asset('assets3/image/next.svg')}}" alt="next"></button>
+        <button class="click-all-product"><p>Xem tất cả</p>  <img src="{{asset('assets3/image/next.svg')}}" alt="next"></button>
     </div>
     <div class="image-plus">
         <ul>
@@ -71,5 +61,9 @@
             }
         }
     }
+
+    $('.click-all-product').click(function(){
+        $(location).attr('href', './san-pham');
+    });
    
 </script>

@@ -8,11 +8,10 @@
         <meta content="Themesbrand" name="author" />
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{asset('assets2/images/favicon.ico')}}">
+        <link rel="shortcut icon" href="{{asset('assets3/image/logo.svg')}}">
 
         <!-- plugin css -->
         <link href="{{asset('assets2/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css')}}" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="{{asset('css-product/style.css')}}" type="text/css" />
 
         <!-- preloader css -->
         <link rel="stylesheet" href="{{asset('assets2/css/preloader.min.css')}}" type="text/css" />
@@ -22,9 +21,12 @@
         <!-- Icons Css -->
         <link href="{{asset('assets2/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- App Css-->
-        <link href="{{asset('assets2/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
-    
         <script src="{{asset('assets2/js/jquery-all.js')}}" crossorigin="anonymous"></script>
+
+        <link href="{{asset('assets2/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
+
+        <script src="{{asset('assets/ckeditor/ckeditor.js')}}"></script>
+        <script src="{{asset('assets3/js/convert_viet_slug.js')}}"></script> 
     </head>
     <body>
         <div id="layout-wrapper">
@@ -178,6 +180,19 @@
         <div class="rightbar-overlay"></div>
 
         <!-- JAVASCRIPT -->
+        <script>
+         
+
+
+            CKEDITOR.replace('content',{
+                filebrowserImageUploadUrl: "{{route('admin.blog.upload',['_token' => csrf_token() ])}}",
+                filebrowserUploadMethod:'form',
+            }); 
+            CKEDITOR.replace('editor',{
+                filebrowserImageUploadUrl: "{{route('admin.blog.upload',['_token' => csrf_token() ])}}",
+                filebrowserUploadMethod:'form',
+            }); 
+        </script>
         <script src="{{asset('assets2/libs/jquery/jquery.min.js')}}"></script>
         <script src="{{asset('assets2/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('assets2/libs/metismenu/metisMenu.min.js')}}"></script>
@@ -200,21 +215,5 @@
 
     </body>
     
-    {{-- <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script> --}}
 
-    <script>
-            // CKEDITOR.replace('editor',{
-            //     filebrowserImageUploadUrl: "{{route('dashboard',['_token' => csrf_token() ])}}",
-            //     filebrowserUploadMethod:'form',
-            // }); 
-            // CKEDITOR.replace('editor1',{
-            //     filebrowserImageUploadUrl: "{{route('dashboard',['_token' => csrf_token() ])}}",
-            //     filebrowserUploadMethod:'form',
-            // }); 
-            // CKEDITOR.replace('content',{
-            //     filebrowserImageUploadUrl: "{{route('dashboard',['_token' => csrf_token() ])}}",
-            //     filebrowserUploadMethod:'form',
-            // });
-           
-     </script>
 </html>

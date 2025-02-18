@@ -7,12 +7,15 @@
     </div>
     <div class="list-blog">
         @php
-            for($i = 0; $i <6; $i++){
+            $blog = DB::table('blog')->get();
+            foreach($blog as $val){
                 echo'<div class="box-blog">';
-                    echo  '<img src="assets3/image/blog-img.png" alt="Ảnh tin tức"/>';
-                    echo  '<h1>TOP 10 Dòng Sóc Bay Úc Đẹp Nhất Trên Thế Giới</h1>';
-                    echo  '<span>21/08/2023</span>';
-                    echo  '<p>DDVS thảo dược Yaocare women - lựa chọn an toàn cho mẹ bầu & mẹ sau sinh. Được chứng nhận an toàn bởi Viện kiểm nghiệm..</p>';
+                    echo'<a href="./kien-thuc/'.$val->slug.'">';
+                        echo  '<img src="assets3/image/img_news/'.$val->image.'" alt="Ảnh tin tức"/>';
+                        echo  '<h1>'.$val->title.'</h1>';
+                        echo  '<span>'.date( 'd/m/Y',strtotime($val->created_at)).'</span>';
+                        echo  '<p>'.$val->subtit.'</p>';
+                    echo'</a>';
                 echo'</div>';
             }
         @endphp

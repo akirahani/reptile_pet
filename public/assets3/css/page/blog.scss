@@ -26,27 +26,33 @@
                 border-radius: 12px;
                 opacity: 100%;
                 background-color: #fff;
-                img {
-                    width: 100%;
-                }
-                h1 {
-                    text-transform: uppercase;
-                    color: #607089;
-                    font-family: 'Montserrat';
-                    font-size: 20px;
-                    font-weight: 600;
-                }
-                span {
-                    color: #607089;
-                    font-family: 'Montserrat';
-                    font-size: 10px;
-                    font-weight: 400;
-                }
-                p {
-                    color: #607089;
-                    font-family: 'Montserrat';
-                    font-size: 14px;
-                    font-weight: 400;
+                a {
+                    text-decoration: none;
+                    img {
+                        width: 100%;
+                    }
+                    h1 {
+                        text-transform: uppercase;
+                        color: #607089;
+                        font-family: 'Montserrat';
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+                    span {
+                        color: #607089;
+                        font-family: 'Montserrat';
+                        font-size: 10px;
+                        font-weight: 400;
+                    }
+                    p {
+                        color: #607089;
+                        font-family: 'Montserrat';
+                        font-size: 14px;
+                        font-weight: 400;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
                 }
             }
         }
