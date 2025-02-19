@@ -41,6 +41,10 @@ Route::middleware('auth:admin')->group(function(){
         Route::get('/category/edit/{id}', 'Admin\Page\CategoryController@edit')->name('admin.category.edit');
         Route::post('/category/update', 'Admin\Page\CategoryController@update')->name('admin.category.update');
         Route::get('/category/del/{id}', 'Admin\Page\CategoryController@delete')->name('admin.category.del');
-    // 
+    // customer
+        Route::get('/customer',function(){
+            return view('backend.page.customer');
+        });
+
     // });
 });

@@ -23,9 +23,9 @@ Route::get('/kien-thuc', function () {
     return view('frontend.layouts.page.blog');
 });
 
-Route::get('/lien-he', function () {
-    return view('frontend.layouts.page.contact');
-});
+Route::get('/lien-he', 'Frontend\Page\ContactController@index');
+
+Route::post('/contact','Frontend\Page\ContactController@post');
 
 // all detail page
 

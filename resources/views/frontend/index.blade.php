@@ -19,7 +19,7 @@
     </div>
    
 
-    <img class="lazy" src="{{asset('upload/vuong.svg')}}" data-src="{{asset('upload/vuong.svg')}}" />
+    <img class="lazy" src="{{asset('assets3/image/vuong.svg')}}" data-src="{{asset('upload/vuong.svg')}}" />
 </body>
 <script>
     $(function(){

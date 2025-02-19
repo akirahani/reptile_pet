@@ -29,24 +29,90 @@
                 <div class="row-input">
                     <div class="form-input">
                         <p>Họ tên</p>
-                        <input type="text">
+                        <input type="text" name="name" spellcheck="false" autocomplete="off">
                     </div>
                     <div class="form-input" id="email">
                         <p>Email</p>
-                        <input type="text">
+                        <input type="text" name="email"  spellcheck="false" autocomplete="off">
                     </div>
                 </div>
                 <div class="form-input">
                     <p>Số điện thoại</p>
-                    <input type="text">
+                    <input type="text" name="phone" spellcheck="false" autocomplete="off">
                 </div>
                 <div class="form-input">
                     <p>Nội dung</p>
-                    <input type="text" class="content-form">
+                    <textarea name="note" class="content-form"  spellcheck="false" autocomplete="off"></textarea>
                 </div>
-                <input type="submit" value="Gửi tin nhắn">
+                <input class="contact-btn" type="button" value="Gửi tin nhắn">
             </form>
        </div>
     </div>
 </section>
+<script>
+
+    $('.contact-btn').click(function(){
+        let sdt = $('input[name="phone"]').val();
+        let ten = $('input[name="name"]').val();
+        let email = $('input[name="email"]').val();
+        let note = $('textarea[name="note"]').val();
+        
+        if(ten == ''){
+            Swal.fire(
+                "",
+                "Vui lòng điền tên của bạn!",
+                "error"
+            );
+        }
+        else {
+            if(email == ''){
+                    Swal.fire(
+                        "",
+                        "Vui lòng điền email của bạn!",
+                        "error"
+                    );  
+                }
+            else{
+                if(sdt == ''){
+                    Swal.fire(
+                        "",
+                        "Vui lòng điền số điện thoại của bạn!",
+                        "error"
+                    );
+                }
+                else{
+                    $(".lazy").css('display','block');
+                    $.ajax({
+   
+                        type: "POST",
+                        url: "/contact",
+                        data: {
+                            "_token": "{{ csrf_token() }}",
+                            "phone" : sdt,
+                            "name" : ten,
+                            "email" :email,
+                            "note":note
+                        },
+                        success:function(data){
+                            $(".lazy").hide();
+                            Swal.fire(
+                                'THÀNH CÔNG!',
+                                'Cảm ơn bạn, chúng tôi sẽ liên hệ với bạn sớm nhất !',
+                                'success'
+                            );
+                            $('input[name="name"]').val('');
+                            $('input[name="phone"]').val('');
+                            $('input[name="email"]').val('');
+                            $('textarea').val('');
+                        }
+                    
+                    })
+
+                }
+            }
+        }
+  
+    });
+  
+</script>
 @endsection
