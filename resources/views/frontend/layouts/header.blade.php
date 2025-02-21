@@ -54,7 +54,11 @@
                 url: "/tim-kiem",
                 success:function(data)
                 {
-                    $('.main-content').html(data.data);
+                    if(data.status == 'success'){
+                        $('.main-content').html(data.data);
+                    }else{
+                        window.location.href = "./"
+                    }
                 }
             });
         });
