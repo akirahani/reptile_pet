@@ -32,8 +32,6 @@ Route::post('/contact','Frontend\Page\ContactController@post');
 Route::get('/san-pham/{link}','Frontend\Detail\ProductController@index')->name('product.detail');
 Route::get('/kien-thuc/{link}', 'Frontend\Detail\BlogController@index')->name('blog.detail');
 // search page
-Route::get('/tim-kiem', function () {
-    return view('frontend.layouts.detail.search');
-});
+Route::post('/tim-kiem', 'Frontend\HomeController@search');
 
 

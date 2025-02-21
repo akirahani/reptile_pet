@@ -19,9 +19,9 @@
                     echo'<li>
                         <div class="image-onew" id="'.$val->slug.'">
                             <picture>
-                                <source class="mobile" media="(max-width:1199px)" srcset="/assets3/image/img_news/'.$arr_link_blog[0].'">
-                                <source class="desktop" media="(min-width:1200px)" srcset="/assets3/image/img_news/'.$arr_link_blog[0].'">
-                                <img src="/assets3/image/img_news/'.$arr_link_blog[0].'" alt="other-news" />
+                                <source class="mobile" media="(max-width:1199px)" srcset="./assets3/image/img_news/'.$arr_link_blog[0].'">
+                                <source class="desktop" media="(min-width:1200px)" srcset="./assets3/image/img_news/'.$arr_link_blog[0].'">
+                                <img src="./assets3/image/img_news/'.$arr_link_blog[0].'" alt="other-news" />
                             </picture>
                         </div>
                         <div class="summary-new">

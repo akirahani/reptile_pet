@@ -41,13 +41,12 @@
     </div>
 </section>
 <script type="text/javascript">
-    $(document).ready(function(){
         let arr_accessory = <?php echo $get_accs; ?>;
         
         
         if(window.innerWidth <= 1200){
             $.each( arr_accessory, function( i, val ) {
-                $('.list-accessory').append('<li id="'+i+'"><a href="./san-pham/'+val.slug+'"><img src="assets3/image/product/'+val.image+'" alt="Sản phẩm (phụ kiện)"><p>'+val.name+'</p></a></li>');
+                $('.list-accessory').append('<li id="'+i+'"><a href="san-pham/'+val.slug+'"><img src="assets3/image/product/'+val.image+'" alt="Sản phẩm (phụ kiện)"><p>'+val.name+'</p></a></li>');
 
             });
         }else{
@@ -57,10 +56,9 @@
             
             $.each( arr_accessory, function( i, val ) {
                 i++;
-                $('.list-accessory').append('<li id="'+i+'"><a href="./san-pham/'+val.slug+'"><img src="assets3/image/product/'+val.image+'" alt="Sản phẩm (phụ kiện)"><p>'+val.name+'</p></a></li>');
+                $('.list-accessory').append('<li id="'+i+'"><a href="san-pham/'+val.slug+'"><img src="assets3/image/product/'+val.image+'" alt="Sản phẩm (phụ kiện)"><p>'+val.name+'</p></a></li>');
             });
         }
-    });
     
 
     $('.click-all-product').click(function(){
