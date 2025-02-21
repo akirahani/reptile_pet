@@ -9,9 +9,11 @@
         @php
             $blog = DB::table('blog')->get();
             foreach($blog as $val){
+                $arr_link_blog = explode(",",$val->image);
+
                 echo'<div class="box-blog">';
                     echo'<a href="./kien-thuc/'.$val->slug.'">';
-                        echo  '<img src="assets3/image/img_news/'.$val->image.'" alt="Ảnh tin tức"/>';
+                        echo  '<img src="assets3/image/img_news/'.$arr_link_blog[0].'" alt="Ảnh tin tức"/>';
                         echo  '<h1>'.$val->title.'</h1>';
                         echo  '<span>'.date( 'd/m/Y',strtotime($val->created_at)).'</span>';
                         echo  '<p>'.$val->subtit.'</p>';
