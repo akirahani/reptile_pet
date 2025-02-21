@@ -61,7 +61,14 @@
 					<?php echo $detail->description; ?>
 				</article>
 				<div class="button-flex">
-					<button class="them-gio" id="" sp="" loai="them-gio">Đặt hàng ngay</button>
+					@php
+						if($detail->slug_shopee == NULL){
+							echo '';
+						}
+						else{
+							echo '<button class="them-gio" id="'.$detail->slug_shopee.'" >Đặt hàng ngay</button>';
+						}
+					@endphp
 					<button class="mua-ngay" id="" sp="" loai="mua-ngay" >Liên hệ trực tiếp</button>
 				</div>
 		
@@ -70,6 +77,20 @@
 	
 	</main>
 </section>
+<script>
+	$('.them-gio').click(function(){
+		let slug_shopee = $(this).attr('id');
+		if(slug_shopee ==''){
+			console.log('a')
+		}else{
+			window.location.href = slug_shopee;
+		}
+
+	});
+	$('.mua-ngay').click(function(){
+		window.location.href = '../lien-he';
+	});
+</script>
 @endsection
 
 

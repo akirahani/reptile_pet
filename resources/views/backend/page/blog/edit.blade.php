@@ -9,6 +9,23 @@
                 @csrf
                 <input type="text" value="{{$blog->id}}" name ="id" hidden>
                     <div class="mb-3">
+                        <label for="input-6">Highlight</label>
+                        @php
+                            if($blog->active == 1){
+                                echo'<div><input name="active" type="radio" class="form-control-rounded" id="input-6" value="1" checked><p>Active</p> </div>';
+
+                            }else{
+                                echo'<div><input name="active" type="radio" class="form-control-rounded" id="input-6" value="1"><p>Active</p> </div>';
+                            }
+
+                            if($blog->active == 0){
+                                 echo'<div><input name="active" type="radio" class="form-control-rounded" id="input-6" value="0" checked><p>None</p></div>';
+                            }else{
+                                echo'<div><input name="active" type="radio" class="form-control-rounded" id="input-6" value="0" ><p>None</p></div>';
+                            }
+                        @endphp
+                    </div>
+                    <div class="mb-3">
                         <label for="input-6">Tiêu đề</label>
                         <input name="title" type="text" value="{{$blog->title}}"  class="inputit form-control form-control-rounded" id="input-6" required>
                     </div>

@@ -11,10 +11,36 @@ class BlogController extends Controller
         $arr_link = explode("/",$_SERVER['REQUEST_URI'] );
         if($arr_link[1] != ""){
             if($arr_link[2] != "" ){
-                $slugb = $arr_link[2];
+                if($arr_link[2] == "public"){
+                    if(isset($arr_link[3])){
+                        if($arr_link[3] != ""){
+                            $slugb = $arr_link[3];
+                        }else{
+
+                        }
+
+                    }else{
+
+                    }
+                }else{
+                    if($arr_link[2] != "" ){
+                        if(isset($arr_link[3])){
+                            if($arr_link[3] != ""){
+                                $slugb = $arr_link[3];
+                            }else{
+    
+                            }
+    
+                        }else{
+                            $slugb =  $arr_link[2];
+                        }
+                    }else{
+
+                    }
+                }
                 $detail = DB::table('blog')->where('slug', $slugb)->first();
                 $blog = DB::table('blog')->where('slug','!=',$slugb)->get();
-                return view('frontend.layouts.detail.blog',compact('detail','blog'));    
+                return view('frontend.layouts.detail.blog',compact('detail','blog'));  
             }else{
  
             }

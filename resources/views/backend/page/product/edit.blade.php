@@ -10,7 +10,7 @@
                
                         <div class="mb-3 col-lg-6">
                             <label for = "input-6"> Tên sản phẩm </label>
-                            <input name = "name" type="text" class ="form-control form-control-rounded" id="input-6" value="{{$product->name}}" required>
+                            <input name = "name" type="text" class ="inputit form-control form-control-rounded" id="input-6" value="{{$product->name}}" required>
                         </div>
                         <div class="mb-3 col-6">
                             <label for ="input-9"> Tên loại sản phẩm</label>
@@ -27,6 +27,7 @@
                         </div>
                         <div class="mb-3 col-6">
                             <label for = "input-6"> Link sản phẩm</label>
+                            <div class="btn-slug btn btn-success" style="width: 100px" >Get Link</div>
                             <input name = "slug" type="text" class ="form-control form-control-rounded" value="{{$product->slug}}" id="input-6" >
                         </div>
                         <div class="mb-3 col-6">
@@ -106,5 +107,19 @@
         imagesPreview(this,'div.img-main');
     });
 });
+
+    $('.btn-slug').css('display','none');  
+    $('.inputit').keypress(function(evt){
+        if($(this).val() != null){
+            $('.btn-slug').css('display','block');
+        }
+    });
+
+    $('.btn-slug').click(function(){
+        let slug_final = $('.inputit').val();
+        let final = toSlug(slug_final);
+        $('input[name="slug"]').val(final);
+        $(this).css('display','none');
+    });
 </script>
 @endsection

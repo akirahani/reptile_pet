@@ -26,6 +26,7 @@ class BlogController extends Controller
         $input = $request->all();
         $blog->title = $input['title'];
         $blog->content = $input['content'];
+        $blog->active = $input['active'];
         $blog->subtit = $input['subtit'];
         $blog->slug = $input['slug'];
         if($request->hasFile('image')){
@@ -77,6 +78,7 @@ class BlogController extends Controller
             'content' => $input['content'],
             'subtit' => $input['subtit'],
             'slug' => $input['slug'],
+            'active' => $input['active']
         );
         if($request->hasFile('image')){
             $image = $request->file('image');

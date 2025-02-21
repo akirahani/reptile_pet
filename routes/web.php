@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'Frontend\Detail\ProductController@index');
+Route::get('/', 'Frontend\HomeController@index');
 
 // all nav page 
 Route::get('/san-pham','Frontend\Page\ProductController@index');

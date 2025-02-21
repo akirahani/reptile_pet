@@ -40,27 +40,28 @@
         </ul>
     </div>
 </section>
-<script>
-    if(window.innerWidth <= 1200){
-        for(let i = 1; i < 11; i++){
-            $('.list-accessory').append('<li><a href=""><img src="assets3/image/product/pd6.png" alt="Sản phẩm (phụ kiện)"><p>Đèn sưởi UAV</p></a></li>');
-        }
-    }else{
-        for(let i = 1; i < 11; i++){
+<script type="text/javascript">
+    $(document).ready(function(){
+        let arr_accessory = <?php echo $get_accs; ?>;
+        
+        
+        if(window.innerWidth <= 1200){
+            $.each( arr_accessory, function( i, val ) {
+                $('.list-accessory').append('<li id="'+i+'"><a href="./san-pham/'+val.slug+'"><img src="assets3/image/product/'+val.image+'" alt="Sản phẩm (phụ kiện)"><p>'+val.name+'</p></a></li>');
 
-            if(i == 1 ){
-                $('.list-accessory').append('<li class="first-img-acces"><img src="assets3/image/imgpkup.png" alt="Thumb phụ kiện"></li>');
-            }
-            else{
-                if(i == 2){
-                    $('.list-accessory').append('');
-
-                }else{
-                    $('.list-accessory').append('<li><a href=""><img src="assets3/image/product/pd6.png" alt="Sản phẩm (phụ kiện)"><p>Đèn sưởi UAV</p></a></li>');
-                }
-            }
+            });
+        }else{
+            $('.list-accessory').append('<div class="all-accs-img"><li id="0" class="img-accs"></li><li id="1" class="img-accs-none"></li></div>');            
+            let imgaccs = $('.all-accs-img');
+            imgaccs.html('<img src="assets3/image/imgpkup.png" alt="Thumb phụ kiện">');
+            
+            $.each( arr_accessory, function( i, val ) {
+                i++;
+                $('.list-accessory').append('<li id="'+i+'"><a href="./san-pham/'+val.slug+'"><img src="assets3/image/product/'+val.image+'" alt="Sản phẩm (phụ kiện)"><p>'+val.name+'</p></a></li>');
+            });
         }
-    }
+    });
+    
 
     $('.click-all-product').click(function(){
         $(location).attr('href', './san-pham');

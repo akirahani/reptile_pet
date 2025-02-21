@@ -9,9 +9,37 @@ class ProductController extends Controller
 {
     public function index(Request $req){
         $arr_link = explode("/",$_SERVER['REQUEST_URI'] );
+        // dd($arr_link);
         if($arr_link[1] != ""){
             if($arr_link[2] != "" ){
-                $slug_product = $arr_link[2];
+                if($arr_link[2] == "public"){
+                    if(isset($arr_link[3])){
+                        if($arr_link[3] != ""){
+                            $slug_product =  $arr_link[3];
+                        }else{
+
+                        }
+
+                    }else{
+
+                    }
+                }else{
+                    if($arr_link[2] != "" ){
+                        if(isset($arr_link[3])){
+                            if($arr_link[3] != ""){
+                                $slug_product =  $arr_link[3];
+                            }else{
+    
+                            }
+    
+                        }else{
+                            $slug_product =  $arr_link[2];
+                        }
+                    }else{
+
+                    }
+                }
+            
                 $detail = DB::table('products')->where('slug', $slug_product)->first();
                 return view('frontend.layouts.detail.product',compact('detail'));    
             }else{
