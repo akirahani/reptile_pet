@@ -63,5 +63,6 @@ class ContactController extends Controller
         else {
             return back()->with("success", "Email has been sent.");
         }
+
     }
 }

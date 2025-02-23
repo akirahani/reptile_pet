@@ -44,7 +44,7 @@
                     <p>Nội dung</p>
                     <textarea name="note" class="content-form"  spellcheck="false" autocomplete="off"></textarea>
                 </div>
-                <input class="contact-btn" type="button" value="Gửi tin nhắn">
+                <input class="contact-btn"  type="button" value="Gửi tin nhắn">
             </form>
        </div>
     </div>
@@ -56,7 +56,7 @@
         let ten = $('input[name="name"]').val();
         let email = $('input[name="email"]').val();
         let note = $('textarea[name="note"]').val();
-        
+        let ip = $(this).attr('id');
         if(ten == ''){
             Swal.fire(
                 "",
@@ -83,15 +83,14 @@
                 else{
                     $(".lazy").css('display','block');
                     $.ajax({
-   
                         type: "POST",
-                        url: "/contact",
+                        url: "{!! URL::to('/contact')!!}",
                         data: {
                             "_token": "{{ csrf_token() }}",
                             "phone" : sdt,
                             "name" : ten,
                             "email" :email,
-                            "note":note
+                            "note":note,
                         },
                         success:function(data){
                             $(".lazy").hide();

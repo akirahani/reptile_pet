@@ -56,4 +56,47 @@ class CategoryController extends Controller
             "success"=>"Bạn xóa thành công"
         ]);
     }
+
+    public function search(Request $req){
+        $input = $req->all();
+        $name = $input['search'];
+       
+        if($name != ""){
+           $arr_cate = DB::table('categories')->select("id","name","slug")->
+            where('name','LIKE','%'.$name.'%')
+            ->get();
+            
+        }else{
+           $arr_cate = DB::table('categories')->select("id","name","slug")
+            ->get();
+        }
+
+        
+        $rlt ='';
+        foreach($arr_cate as $val){
+            $rlt .= '<tr id="category'.$val->id.'">
+                    <td style="width:20%" scope="row">'.$val->name.'</td>  
+         
+                    <td style="width:20%" scope="row">'.$val->slug.'</td>  
+
+                    <td style="width:20%" scope="row">
+                        <a href="/admin/category/edit/'.$val->id.'" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                        <a data-id="'.$val->id.'" class="btn btn-danger del"  ><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>';
+        } 
+
+        if(sizeof($arr_cate) > 0 ){
+            return response()->json([
+                'status' => 'success',
+                'data' => $rlt
+            ]);
+        }else{
+            return response()->json([
+                'status' => 'failed',
+                'data' => ''
+            ]);
+        }
+  
+    }
 }

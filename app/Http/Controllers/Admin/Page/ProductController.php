@@ -102,4 +102,64 @@ class ProductController extends Controller
             "success"=>"Bạn xóa thành công"
         ]);
     }
+
+    public function search(Request $req){
+        $input = $req->all();
+        $name = $input['search'];
+        $cate = $input['cate'];
+        $arr_sp = [];
+        $cateory = DB::table('categories')->get();
+        $arr_loai_sp = [];
+        foreach($cateory as $val){
+            $arr_loai_sp[$val->id] = $val->name; 
+        }
+
+        if($name != ""){
+            if($cate == 0){
+                $arr_sp = DB::table('products')->select("id","name","image","category_id")->
+                where('name','LIKE','%'.$name.'%')
+                ->get();
+            }else{
+                $arr_sp = DB::table('products')->select("id","name","image","category_id")->
+                where('name','LIKE','%'.$name.'%')
+                ->orWhere('category_id',$cate)
+                ->get();
+            }
+        }else{
+            $arr_sp = DB::table('products')->select("id","name","image","category_id")
+            ->get();
+        }
+
+        
+        $rlt ='';
+        foreach($arr_sp as $val){
+            $arr_imgs = explode(",",$val->image);
+            $rlt .= ' <tr id="product'.$val->id.'">
+              <td  scope="row" style="width: 25%">'.$val->name.'</td>
+                  
+              <td  scope="row" style="width: 25%">'.$arr_loai_sp[$val->category_id].'</td>
+
+              <td class="image-son" scope="row" style="width: 25%">
+                  <img src="../assets3/image/product/'.$arr_imgs[0].'" alt="" style="width: 100%;" >
+              </td>
+              <td  scope="row" style="width: 25%">
+                  <a href="/admin/product/edit/'.$val->id.'" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                  <a data-id ="'.$val->id.'" class="btn btn-danger del"> <i class="fas fa-trash"></i></a>
+              </td>
+          </tr>';
+        } 
+
+        if(sizeof($arr_sp) > 0 ){
+            return response()->json([
+                'status' => 'success',
+                'data' => $rlt
+            ]);
+        }else{
+            return response()->json([
+                'status' => 'failed',
+                'data' => ''
+            ]);
+        }
+  
+    }
 }

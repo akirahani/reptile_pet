@@ -51,7 +51,7 @@
             $.ajax({
                 method: "POST",
                 data: {  "_token": "{{ csrf_token() }}","search": search },
-                url: "/tim-kiem",
+                url: "{!! URL::to('/tim-kiem')!!}",
                 success:function(data)
                 {
                     if(data.status == 'success'){

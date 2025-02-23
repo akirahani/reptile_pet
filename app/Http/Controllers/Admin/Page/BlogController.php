@@ -102,4 +102,49 @@ class BlogController extends Controller
             "success"=>"Bạn xóa thành công"
         ]);
     }
+
+    public function search(Request $req){
+        $input = $req->all();
+        $name = $input['search'];
+        $arr_blog = [];
+
+        if($name != ""){        
+            $arr_blog =  DB::table('blog')->select("id","title","image")->
+                where('title','LIKE','%'.$name.'%')
+                ->get();
+            
+        }else{
+            $arr_blog = DB::table('blog')->select("id","title","image")
+            ->get();
+        }
+
+        
+        $rlt ='';
+        foreach($arr_blog as $val){
+            $rlt .= ' <tr id="product'.$val->id.'">
+              <td  scope="row" style="width: 20%">'.$val->title.'</td>
+                  
+              <td class="image-son" scope="row" style="width: 20%">
+                  <img src="../assets3/image/img_news/'.$val->image.'" alt="" style="width: 100%;" >
+              </td>
+              <td  scope="row" style="width: 20%">
+                  <a href="/admin/blog/edit/'.$val->id.'" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                  <a data-id ="'.$val->id.'" class="btn btn-danger del"> <i class="fas fa-trash"></i></a>
+              </td>
+          </tr>';
+        } 
+
+        if(sizeof($arr_blog) > 0 ){
+            return response()->json([
+                'status' => 'success',
+                'data' => $rlt
+            ]);
+        }else{
+            return response()->json([
+                'status' => 'failed',
+                'data' => ''
+            ]);
+        }
+  
+    }
 }

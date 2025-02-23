@@ -26,6 +26,7 @@ Route::middleware('auth:admin')->group(function(){
         Route::get('/product/edit/{id}', 'Admin\Page\ProductController@edit')->name('product.edit');
         Route::post('/product/update', 'Admin\Page\ProductController@update')->name('product.update');
         Route::get('/product/del/{id}', 'Admin\Page\ProductController@delete')->name('product.del');
+        Route::post('/product/search', 'Admin\Page\ProductController@search')->name('product.search');
     //new(blog)
         Route::get('/blog', 'Admin\Page\BlogController@index')->name('admin.blog.index');
         Route::get('/blog/add', 'Admin\Page\BlogController@add')->name('admin.blog.add');
@@ -34,6 +35,8 @@ Route::middleware('auth:admin')->group(function(){
         Route::post('/blog/update', 'Admin\Page\BlogController@update')->name('admin.blog.update');
         Route::get('/blog/del/{id}', 'Admin\Page\BlogController@delete')->name('admin.blog.del');
         Route::post('file-blog','Admin\Page\BlogController@upload')->name('admin.blog.upload');
+        Route::post('/blog/search', 'Admin\Page\BlogController@search')->name('blog.search');
+
     //category
         Route::get('/category', 'Admin\Page\CategoryController@index')->name('admin.category.index');
         Route::get('/category/add', 'Admin\Page\CategoryController@add')->name('admin.category.add');
@@ -41,10 +44,14 @@ Route::middleware('auth:admin')->group(function(){
         Route::get('/category/edit/{id}', 'Admin\Page\CategoryController@edit')->name('admin.category.edit');
         Route::post('/category/update', 'Admin\Page\CategoryController@update')->name('admin.category.update');
         Route::get('/category/del/{id}', 'Admin\Page\CategoryController@delete')->name('admin.category.del');
+        Route::post('/category/search', 'Admin\Page\CategoryController@search')->name('admin.category.search');
+
     // customer
         Route::get('/customer',function(){
             return view('backend.page.customer');
         });
+
+        Route::post('/customer/search','Admin\Page\HomeController@search');
 
     // });
 });
