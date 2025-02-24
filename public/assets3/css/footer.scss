@@ -55,35 +55,39 @@
     .all-wp-footer {
         margin-top: 50px;
         width: 100%;
-        .box-footer {
-            display: flex;
-            padding: 30px;
-            .column-first,
-            .column-second,
-            .column-third,
-            .column-last {
-                width: 25%;
-                img {
-                    display: block;
-                    margin: auto;
-                }
-                p {
-                    font-family: 'Montserrat';
-                    font-size: 14px;
-                    font-weight: 500;
-                    line-height: 20px;
-                    text-align: center;
-                    &.sub-title {
-                        width: 200px;
+        .bound-footer {
+            width: 1110px;
+            margin: auto;
+            .box-footer {
+                display: flex;
+                padding: 30px;
+                .column-first,
+                .column-second,
+                .column-third,
+                .column-last {
+                    width: 25%;
+                    img {
+                        display: block;
                         margin: auto;
-                        padding-top: 16px;
                     }
-                }
-                ul {
-                    margin: auto;
-                    li {
-                        p {
-                            font-size: 20px;
+                    p {
+                        font-family: 'Montserrat';
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 20px;
+                        text-align: center;
+                        &.sub-title {
+                            width: 200px;
+                            margin: auto;
+                            padding-top: 16px;
+                        }
+                    }
+                    ul {
+                        margin: auto;
+                        li {
+                            p {
+                                font-size: 20px;
+                            }
                         }
                     }
                 }

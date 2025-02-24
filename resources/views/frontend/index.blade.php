@@ -283,6 +283,69 @@
 	    }
 	});
 
+
+
+	$('.btn-search').click(function(){
+		let search = $('.head-search input[name="search"]').val();
+		$.ajax({
+			method: "POST",
+			data: {  "_token": "{{ csrf_token() }}","search": search },
+			url: "{!! URL::to('/tim-kiem')!!}",
+			success:function(data)
+			{
+				if(data.status == 'success'){
+					$('.main-content').html(data.data);
+				}else{
+					window.location.href = "./"
+				}
+			}
+		});
+	});
+
+	$('.categories-all li').click(function(){
+		let link_cate = $(this).attr('id');
+		var url = '{{ route("cate.post", ":category") }}';
+		url = url.replace(':category', link_cate);
+		$.ajax({
+			headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+			url: url,
+			type: "POST",
+			data: {
+				"_token": "{{ csrf_token() }}",
+				'link': link_cate ,
+				'loai': 1
+			},
+			success:function(data){
+				let rlt = JSON.parse(data);
+				$('.page').hide();
+				$('.list-product').html(rlt.data);
+
+			}
+		});
+	});
+
+	$('.categories-all-filter li').click(function(){
+		let link_cate = $(this).attr('id');
+		var url = '{{ route("cate.post", ":category") }}';
+		url = url.replace(':category', link_cate);
+		$.ajax({
+			headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+			url: url,
+			type: "POST",
+			data: {
+				"_token": "{{ csrf_token() }}",
+				'link': link_cate ,
+				'loai': 2
+
+			},
+			success:function(data){
+				let rlt = JSON.parse(data);
+				$('.page').hide();
+				$('.list-product').html(rlt.data);
+
+			}
+		});
+	});
 </script>
 
 </html>

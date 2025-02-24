@@ -30,7 +30,7 @@ class HomeController extends Controller
                     $arrimg = explode(",",$val->image);
                     $arr_rlt .= '
                                 <li>
-                                    <a href="./san-pham/'.$val->slug.'">
+                                    <a href="san-pham/'.$val->slug.'">
                                         <img src="assets3/image/product/'.$arrimg[0].'" alt="Sản phẩm">
                                         <p>'.$val->name.'</p>
                                     </a>

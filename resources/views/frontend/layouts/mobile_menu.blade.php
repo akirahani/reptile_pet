@@ -1,6 +1,10 @@
 <nav class="nav-mobile">
 	<ul>
 		<img src="{{asset('assets3/image/logo.svg')}}" alt="Logo bò sát" />
+		<div class="head-search">
+			<input class="input-search-mb" type="input" name="search" placeholder="Tìm kiếm..." />
+			<img class="btn-search-mb" src="{{asset('assets3/image/search.svg')}}" alt="search" />
+		</div>
         <li><a href="{{url('/')}}">Trang chủ</a></li>
         <li><a href="{{url('./san-pham')}}">Sản phẩm</a></li>
         <li><a href="{{url('kien-thuc')}}">Kiến thức</a></li>
@@ -29,5 +33,23 @@
 	});
 
 
+	$('.btn-search-mb').click(function(){
+		let search = $('.input-search-mb').val();
+		$.ajax({
+			method: "POST",
+			data: {  "_token": "{{ csrf_token() }}","search": search },
+			url: "{!! URL::to('/tim-kiem')!!}",
+			success:function(data)
+			{
+				if(data.status == 'success'){
+					$('.main-content').html(data.data);
+				}else{
+					window.location.href = "./"
+				}
+			}
+		});
+	});
 
+
+	
 </script>

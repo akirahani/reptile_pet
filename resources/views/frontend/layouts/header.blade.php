@@ -45,24 +45,8 @@
             </ul>
         </nav>
     </header>
-    <script>
-        $('.btn-search').click(function(){
-            let search = $('input[name="search"]').val();
-            $.ajax({
-                method: "POST",
-                data: {  "_token": "{{ csrf_token() }}","search": search },
-                url: "{!! URL::to('/tim-kiem')!!}",
-                success:function(data)
-                {
-                    if(data.status == 'success'){
-                        $('.main-content').html(data.data);
-                    }else{
-                        window.location.href = "./"
-                    }
-                }
-            });
-        });
-    </script>
+    
     @include('frontend.layouts.mobile_menu')
+
 </div>
 

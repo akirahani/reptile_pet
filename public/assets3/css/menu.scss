@@ -13,7 +13,7 @@
         .bar-header {
             display: flex;
             align-items: center;
-            justify-content: space-around;
+            // justify-content: space-around;
             .head-right {
                 .img-first,
                 .logout,
@@ -24,8 +24,16 @@
             .head-right {
                 display: none;
             }
-            .head-left,
-            .head-center,
+            .head-center {
+                cursor: pointer;
+                display: block;
+                margin: 0 auto;
+                padding-right: 30px;
+            }
+            .head-left {
+                cursor: pointer;
+                margin-left: 5px;
+            }
             .head-search {
                 position: relative;
                 cursor: pointer;
@@ -47,6 +55,7 @@
                     top: 5px;
                     right: 0;
                 }
+                display: none;
             }
         }
         .nav-desk {
@@ -54,6 +63,7 @@
         }
     }
     .nav-mobile {
+        background: rgba(136, 129, 129, 0.28);
         margin-left: -100%;
         top: 0;
         left: 0;
@@ -61,21 +71,43 @@
         width: 100%;
         z-index: 10;
         height: 100%;
-        background: #a78260;
-        margin-bottom: 57px;
         transition: all .2s;
         ul {
+            margin-top: 0;
             position: absolute;
             background: #fff;
-            width: calc(100% - 150px);
+            width: calc(100% - 200px);
             height: 100%;
             list-style: none;
-            padding: 29px 50px 0 15px;
+            padding: 29px 30px 0 15px;
+            .head-search {
+                margin: 25px 0;
+                position: relative;
+                cursor: pointer;
+                .input-search-mb {
+                    position: relative;
+                    padding: 5px;
+                    border: none;
+                    outline: none;
+                    font-size: 14px;
+                    border-radius: 24px;
+                    font-style: normal;
+                    line-height: 23px;
+                    color: #000000;
+                    background-color: #F5F5F5;
+                    border-radius: 8px;
+                    width: 100%;
+                }
+                .btn-search-mb {
+                    position: absolute;
+                    top: 8px;
+                    right: 5px;
+                }
+            }
             li {
-                margin-top: 15px;
-                padding-bottom: 27px;
+                margin: 30px 0;
                 &:last-child {
-                    padding-bottom: 0;
+                    margin-bottom: 0;
                 }
                 a {
                     text-decoration: none;
@@ -121,6 +153,9 @@
         .bar-header {
             width: 1155px;
             margin: 0 auto;
+            .head-center {
+                padding: 0;
+            }
             .head-left {
                 width: 10%;
                 display: none;

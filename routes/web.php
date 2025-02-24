@@ -17,7 +17,9 @@ Route::get('/', 'Frontend\HomeController@index');
 
 // all nav page 
 Route::get('/san-pham','Frontend\Page\ProductController@index');
-Route::post('/san-pham/{category}','Frontend\Page\ProductController@load_category');
+Route::post('/san-pham/{category}','Frontend\Page\ProductController@load_category')->name('cate.post');
+Route::get('/san-pham/{category}','Frontend\Page\ProductController@filter_category')->name('product.cate');
+
 
 Route::get('/kien-thuc', function () {
     return view('frontend.layouts.page.blog');
